@@ -9,3 +9,8 @@ See [Testing your GitHub Pages site locally with Jekyll](https://docs.github.com
 cd docs
 bundle install && bundle exec jekyll serve
 ```
+
+Alternatively, run site locally with hot-reload enabled
+```shell
+bundle exec jekyll serve --livereload
+```
