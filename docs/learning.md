@@ -11,29 +11,31 @@ permalink: /learning/
   <ul class="post-list">
 
     {% for post in sorted %}
+
       <li>
+
         <span class="post-meta">
           {{ post.date | date: "%b %-d, %Y" }}
         </span>
-        {% if post.public == false %}
-          <span class="post-meta">(private)</span>
-        {% endif %}
-        <h4>
-          <a class="post-link" href="{{ post.url | relative_url }}">
-            {{ post.title }}
-          </a>
-        </h4>
+
+        <a class="post-link" href="{{ post.url | relative_url }}">
+          {{ post.title }}
+        </a>
+
         {% if post.tags %}
-          <b class="post-tags">
+          <p>
             {% for tag in post.tags %}
-              <span class="tag">#{{ tag }}</span>
+              <b><i>#{{ tag }}</i></b>
             {% endfor %}
-          </b>
+          </p>
         {% endif %}
+
         {% if post.excerpt %}
           {{ post.excerpt }}
         {% endif %}
+
       </li>
+
     {% endfor %}
 
   </ul>
